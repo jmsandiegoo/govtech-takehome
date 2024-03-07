@@ -1,0 +1,28 @@
+{
+  "name": "govtech-takehome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmsandiegoo/govtech-takehome.git"
+  },
+  "author": "Jm San Diego",
+  "license": "ISC",
+  "bin": {
+    "govtech-takehome": "./dist/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/jmsandiegoo/govtech-takehome/issues"
+  },
+  "homepage": "https://github.com/jmsandiegoo/govtech-takehome#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  }
+}
