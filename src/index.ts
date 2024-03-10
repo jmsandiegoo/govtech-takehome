@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import { UI } from "./ui/UI";
 
 class MainApp {
