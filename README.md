@@ -1,7 +1,7 @@
 # GiftTrackerPro 
 (Govtech Takehome Assignment)
 Welcome to GiftTrackerPro, your ultimate solution for managing holiday gift redemptions within your organization!
-
+![thubmnail](https://i.imgur.com/YkhA6nT.png)
 ## Database Setup
 GiftTrackerPro uses PostgreSQL for storing gift redemption data. Follow these steps to set up the database:
 
