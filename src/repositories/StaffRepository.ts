@@ -1,10 +1,8 @@
 
-import { Service } from "typedi";
 import { Database } from "../database/Database";
 import { Staff } from "../models/Staff";
 import { IStaffRepository } from "./IStaffRepository";
 
-@Service()
 export class StaffRepository implements IStaffRepository {
     private dbService: Database;
 
@@ -12,7 +10,7 @@ export class StaffRepository implements IStaffRepository {
         this.dbService = dbService;
     }
 
-    public async getStaffByPassId(staffPassId: string): Promise<Staff | undefined> {
+    public async getStaffByPassId(staffPassId: string): Promise<Staff | null> {
         const staff = await this.dbService
             .getInstance()
             .selectFrom("staffs")
@@ -24,6 +22,6 @@ export class StaffRepository implements IStaffRepository {
             ? {staffPassId: staff.staff_pass_id, 
                 teamName: staff.team_name, 
                 createdAt: staff.created_at} 
-            : undefined;
+            : null;
     }
 }

@@ -1,3 +1,11 @@
 
-export const initialize_message: string = "Initializing...";
-export const greet_message: string = "Welcome to the Festive Gift Redemption System! It's the season of giving, and we're here to assist you \n in distributing joy and gifts to the teams";
+// General
+export const LOGO = "░██████╗░██╗███████╗████████╗████████╗██████╗░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░██████╗░██████╗░░█████╗░\n"
+    + "██╔════╝░██║██╔════╝╚══██╔══╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗\n"
+    + "██║░░██╗░██║█████╗░░░░░██║░░░░░░██║░░░██████╔╝███████║██║░░╚═╝█████═╝░█████╗░░██████╔╝██████╔╝██████╔╝██║░░██║\n"
+    + "██║░░╚██╗██║██╔══╝░░░░░██║░░░░░░██║░░░██╔══██╗██╔══██║██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗██╔═══╝░██╔══██╗██║░░██║\n"
+    + "╚██████╔╝██║██║░░░░░░░░██║░░░░░░██║░░░██║░░██║██║░░██║╚█████╔╝██║░╚██╗███████╗██║░░██║██║░░░░░██║░░██║╚█████╔╝\n"
+    + "░╚═════╝░╚═╝╚═╝░░░░░░░░╚═╝░░░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝░╚════╝░";
+export const WELCOME_MESSAGE: string = "Welcome to GiftTrackerPro, your ultimate solution for managing holiday gift redemptions within your organization! \n Type 'help' to see a list of commands";
+export const INITIALIZE_MESSAGE: string = "Initializing...";
+// 

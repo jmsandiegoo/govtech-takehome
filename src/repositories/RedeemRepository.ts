@@ -1,9 +1,7 @@
-import { Service } from "typedi";
 import { Redeem } from "../models/Redeem";
 import { IRedeemRepository } from "./IRedeemRepository";
 import { Database } from "../database/Database";
 
-@Service()
 export class RedeemRepository implements IRedeemRepository {
     private dbService: Database;
 
@@ -11,7 +9,7 @@ export class RedeemRepository implements IRedeemRepository {
         this.dbService = dbService;
     }
 
-    public async getRedeemByTeamName(teamName: string): Promise<Redeem | undefined> {
+    public async getRedeemByTeamName(teamName: string): Promise<Redeem | null> {
         const redeem = await this.dbService
             .getInstance()
             .selectFrom("redeems")
@@ -23,6 +21,6 @@ export class RedeemRepository implements IRedeemRepository {
             ? {redeemId: redeem.redeem_id, 
                 teamName: redeem.team_name, 
                 redeemedAt: redeem.redeemed_at}
-            : undefined;
+            : null;
     }
 }

@@ -1,8 +1,13 @@
 import * as readline from "readline";
+import os from 'os';
+import { IUI } from "./IUI";
+import { LOGO, WELCOME_MESSAGE } from "../constants/messages";
 
-export class UI {
+export class UI implements IUI {
     private reader: readline.Interface;
     private outputStream: NodeJS.WriteStream;
+    private static readonly DIVIDER: string = "____________________________________________________________";
+    private static readonly LINE_SEPARATOR: string = os.EOL;
 
     constructor(inputStream = process.stdin, outputStream = process.stdout) {
         this.reader = readline.createInterface({
@@ -22,6 +27,22 @@ export class UI {
         });
     }
 
+    /**
+     * @Override
+     */
+    public greetUser(): void {
+        this.outputToUser(
+            LOGO,
+            UI.LINE_SEPARATOR,
+            WELCOME_MESSAGE,
+            UI.LINE_SEPARATOR,
+            UI.DIVIDER,
+        );
+    }
+
+    /**
+     * @Override
+     */
     public async getRawUserCommand(): Promise<string> {
         let rawInputLine: string;
         do {
@@ -31,7 +52,23 @@ export class UI {
         return rawInputLine;
     }
 
-    public outputTouser(...messages: string[]): void {
+    /**
+     * @Override
+     */
+    public outputResultToUser(resultMessage: string): void {
+        this.outputToUser(
+            UI.DIVIDER,
+            UI.LINE_SEPARATOR,
+            resultMessage,
+            UI.LINE_SEPARATOR,
+            UI.DIVIDER,
+        );
+    }
+
+    /**
+     * @Override
+     */
+    public outputToUser(...messages: string[]): void {
         for (let m of messages) {
             this.outputStream.write(m + "\n");
         }

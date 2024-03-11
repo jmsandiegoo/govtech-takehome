@@ -1,10 +1,8 @@
 
-import { Service } from "typedi";
 import { Database } from "../database/Database";
 import { ITeamRepository } from "./ITeamRepository";
 import { Team } from "../models/Team";
 
-@Service()
 export class TeamRepository implements ITeamRepository {
     private dbService: Database;
 
@@ -15,7 +13,7 @@ export class TeamRepository implements ITeamRepository {
     /**
      * @Override
      */
-    public async getTeamByName(teamName: string): Promise<Team | undefined> {
+    public async getTeamByName(teamName: string): Promise<Team | null> {
         const team = await this.dbService
             .getInstance()
             .selectFrom("teams")
@@ -25,6 +23,6 @@ export class TeamRepository implements ITeamRepository {
 
         return team 
             ? {teamName: team.team_name, createdAt: team.created_at} 
-            : undefined;
+            : null;
     }
 }
