@@ -3,7 +3,7 @@ import { ICommand } from "./ICommand";
 import { CommandResDTO } from "../dto/response/CommandResDTO";
 
 export class LookupCommand implements ICommand {
-    public static readonly COMMAND_WORD = "lookup";
+    public static readonly COMMAND_WORD = "lookup-staff";
 
     private staffPassId: string;
     private staffService: IStaffService;
