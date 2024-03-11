@@ -7,13 +7,17 @@ import { UI } from './ui/UI';
 import { Parser } from './parser/Parser';
 import { StaffService } from './services/StaffService';
 import { StaffRepository } from './repositories/StaffRepository';
+import { TeamService } from './services/TeamService';
+import { TeamRepository } from './repositories/TeamRepository';
 
 // instantiate di dependencies
 const database: Database = new Database();
 const staffRepository: StaffRepository = new StaffRepository(database);
 const redeemRepository: RedeemRepository = new RedeemRepository(database);
+const teamRepository: TeamRepository = new TeamRepository(database);
 const staffService: StaffService = new StaffService(staffRepository, redeemRepository);
-const parser: Parser = new Parser(staffService);
+const teamService: TeamService = new TeamService(teamRepository, redeemRepository);
+const parser: Parser = new Parser(staffService, teamService);
 const ui: UI = new UI();
 
 const mainApp = new MainApp(ui, parser);

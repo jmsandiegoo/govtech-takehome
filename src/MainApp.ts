@@ -1,8 +1,9 @@
-import { INITIALIZE_MESSAGE } from "./constants/messages";
 import { IParser } from "./parser/IParser";
 import { IUI } from "./ui/IUI";
 import { ICommand } from "./commands/ICommand";
 import { CommandResDTO } from "./dto/response/CommandResDTO";
+import { InvalidCommandError } from "./errors/InvalidCommandError";
+import { CommandExecutionError } from "./errors/CommandExecutionError";
 
 export class MainApp {
     private ui: IUI;
@@ -14,7 +15,6 @@ export class MainApp {
     }
 
     public start(): void {
-        this.ui.outputToUser(INITIALIZE_MESSAGE);
         this.ui.greetUser();
     }
 
@@ -27,7 +27,12 @@ export class MainApp {
                 const result: CommandResDTO = await command.execute();
                 this.ui.outputResultToUser(result.resultMessage);
             } catch (error) {
-                console.error(error);
+                if (error instanceof InvalidCommandError || error instanceof CommandExecutionError) {
+                    this.ui.outputErrorToUser(error.message);
+                } else {
+                    this.ui.outputErrorToUser("Unexpected error occured. Exting...");
+                    process.exit(1);
+                }
             }
         }
     };

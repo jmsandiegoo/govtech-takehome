@@ -1,0 +1,7 @@
+
+export class InvalidCommandError extends Error {
+    constructor(message: string) {
+        super(message)
+        this.name = "Invalid Command Error";
+    }
+}
