@@ -42,3 +42,5 @@ DATABASE_URL=postgres://postgres:govtechrocks@localhost:5433/postgres
 `lookup-staff <staffPassId>`: Look up the database for staff with the particular staff pass ID.
 `verify-team-redemption <teamName>`: Check if the team has already/haven't redeemed the gift.
 `redeem-gift <teamName>`: Redeem the gift for that particular team and add a new redemption record in the database.
+
+* due to midterms and assignment deadlines over the weekend i didnt have the time to implement unit test sadly :(
