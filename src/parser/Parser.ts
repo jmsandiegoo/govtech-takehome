@@ -1,6 +1,6 @@
 import { ICommand } from "../commands/ICommand";
 import { IParser } from "./IParser";
-import { LookupCommand } from "../commands/LookupCommand";
+import { LookupStaffCommand } from "../commands/LookupStaffCommand";
 import { IStaffService } from "../services/IStaffService";
 
 export class Parser implements IParser {
@@ -27,7 +27,7 @@ export class Parser implements IParser {
 
         let command: ICommand;
         switch (commandWord) {
-            case LookupCommand.COMMAND_WORD:
+            case LookupStaffCommand.COMMAND_WORD:
                 command = this.parseLookupCommand(args);
                 break;
             default:
@@ -51,6 +51,6 @@ export class Parser implements IParser {
             console.log("staff id required error");
         }
 
-        return new LookupCommand(staffPassId, this.staffService);
+        return new LookupStaffCommand(staffPassId, this.staffService);
     }
 }
