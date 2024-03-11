@@ -1,11 +1,18 @@
 import * as readline from "readline";
 import os from 'os';
 import { IUI } from "./IUI";
-import { LOGO, WELCOME_MESSAGE } from "../utils/constants/messages";
 
 export class UI implements IUI {
     private reader: readline.Interface;
     private outputStream: NodeJS.WriteStream;
+
+    private static LOGO = "░██████╗░██╗███████╗████████╗████████╗██████╗░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░██████╗░██████╗░░█████╗░\n"
+    + "██╔════╝░██║██╔════╝╚══██╔══╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗\n"
+    + "██║░░██╗░██║█████╗░░░░░██║░░░░░░██║░░░██████╔╝███████║██║░░╚═╝█████═╝░█████╗░░██████╔╝██████╔╝██████╔╝██║░░██║\n"
+    + "██║░░╚██╗██║██╔══╝░░░░░██║░░░░░░██║░░░██╔══██╗██╔══██║██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗██╔═══╝░██╔══██╗██║░░██║\n"
+    + "╚██████╔╝██║██║░░░░░░░░██║░░░░░░██║░░░██║░░██║██║░░██║╚█████╔╝██║░╚██╗███████╗██║░░██║██║░░░░░██║░░██║╚█████╔╝\n"
+    + "░╚═════╝░╚═╝╚═╝░░░░░░░░╚═╝░░░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝░╚════╝░";
+    private static WELCOME_MESSAGE: string = "Welcome to GiftTrackerPro, your ultimate solution for managing holiday gift redemptions within your organization!";
     private static readonly DIVIDER: string = "____________________________________________________________\n";
     private static readonly LINE_SEPARATOR: string = os.EOL;
 
@@ -32,9 +39,9 @@ export class UI implements IUI {
      */
     public greetUser(): void {
         this.outputToUser(
-            LOGO,
+            UI.LOGO,
             UI.LINE_SEPARATOR,
-            WELCOME_MESSAGE,
+            UI.WELCOME_MESSAGE,
             UI.LINE_SEPARATOR,
             UI.DIVIDER,
         );
