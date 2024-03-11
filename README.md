@@ -38,6 +38,7 @@ DATABASE_URL=postgres://postgres:govtechrocks@localhost:5433/postgres
 5. Build the project: `npm run build`
 6. Run the project: `npx govtech-takehome`
 
-
-
-
+## Commands
+`lookup-staff <staffPassId>`: Look up the database for staff with the particular staff pass ID.
+`verify-team-redemption <teamName>`: Check if the team has already/haven't redeemed the gift.
+`redeem-gift <teamName>`: Redeem the gift for that particular team and add a new redemption record in the database.
