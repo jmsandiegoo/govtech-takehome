@@ -15,7 +15,7 @@ export class StaffRepository implements IStaffRepository {
             .getInstance()
             .selectFrom("staffs")
             .selectAll()
-            .where("staff_pass_id","=", staffPassId)
+            .where("staff_pass_id","=", staffPassId.toUpperCase())
             .executeTakeFirst();
 
         return staff 

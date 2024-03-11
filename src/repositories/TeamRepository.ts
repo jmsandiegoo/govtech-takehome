@@ -18,7 +18,7 @@ export class TeamRepository implements ITeamRepository {
             .getInstance()
             .selectFrom("teams")
             .selectAll()
-            .where("team_name", "=", teamName)
+            .where("team_name", "=", teamName.toUpperCase())
             .executeTakeFirst();
 
         return team 
