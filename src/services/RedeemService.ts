@@ -15,6 +15,9 @@ export class RedeemService implements IRedeemService {
         this.redeemRepository = redeemRepository;
     }
 
+    /**
+     * @Overrides
+     */
     public async redeemGift(teamName: string, redeemedAt: Date | null): Promise<RedeemGiftResDTO> {
         const team: Team | null = await this.teamRepository.getTeamByName(teamName);
 

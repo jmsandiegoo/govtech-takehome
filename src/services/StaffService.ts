@@ -4,6 +4,7 @@ import { IStaffRepository } from "../repositories/IStaffRepository";
 import { IRedeemRepository } from "../repositories/IRedeemRepository";
 import { Redeem } from "../models/Redeem";
 import { IStaffService } from "./IStaffService";
+import { ServiceError } from "../errors/ServiceError";
 
 export class StaffService implements IStaffService {
     private staffRepository: IStaffRepository;
@@ -14,11 +15,14 @@ export class StaffService implements IStaffService {
         this.redeemRepository = redeemRepository;
     }
 
-    public async lookUpStaffByPassId(staffPassId: string): Promise<StaffLookUpResDTO | null> {
+    /**
+     * @Overrides
+     */
+    public async lookUpStaffByPassId(staffPassId: string): Promise<StaffLookUpResDTO> {
         const staff: Staff | null = await this.staffRepository.getStaffByPassId(staffPassId);
 
         if (!staff) {
-            return null;
+            throw new ServiceError("Staff does not exist");
         }
 
         const redeem: Redeem | null = await this.redeemRepository.getRedeemByTeamName(staff.teamName);

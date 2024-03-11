@@ -6,5 +6,5 @@ export interface IStaffService {
      * @returns {StaffLookUpResDTO}
      * @throws {ServiceError} throws an error if team does not exists or any unexpected errors.
      */
-    lookUpStaffByPassId(staffPassId: string): Promise<StaffLookUpResDTO | null>
+    lookUpStaffByPassId(staffPassId: string): Promise<StaffLookUpResDTO>
 }

@@ -15,7 +15,10 @@ export class TeamService implements ITeamService {
         this.teamRepository = teamRepository;
         this.redeemRepository = redeemRepository;
     }
-
+    
+    /**
+     * @Overrides
+     */
     public async verifyTeamRedemption(teamName: string): Promise<VerifyTeamRedemptionResDTO> {
         const team: Team | null = await this.teamRepository.getTeamByName(teamName);
 

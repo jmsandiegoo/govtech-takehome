@@ -7,13 +7,6 @@ import { CommandExecutionError } from "../errors/CommandExecutionError";
 
 export class VerifyTeamRedemptiomCommand implements ICommand {
     public static readonly COMMAND_WORD = "verify-team-redemption";
-    public static GEN_SUCCESS_MESSAGE = 
-        (teamName: string, isEligibleToRedeem: boolean) => 
-            `${VerifyTeamRedemptiomCommand.COMMAND_WORD} done: \n` +
-            `${teamName} has ${isEligibleToRedeem ? 'not' : 'already'} redeemed`;
-    public static GEN_FAIL_MESSAGE = (errorMessage: string) => 
-            `${VerifyTeamRedemptiomCommand.COMMAND_WORD} failed: \n` +
-            errorMessage;
 
     private teamName: string;
     private teamService: ITeamService;
