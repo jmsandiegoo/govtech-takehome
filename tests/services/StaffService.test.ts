@@ -41,7 +41,7 @@ describe("StaffService", () => {
     });
   });
 
-  it("lookUpStaffByPassId returns null when staff does not exist", async () => {
+  it("lookUpStaffByPassId throws ServiceError when staff does not exist", async () => {
     mockStaffRepo.getStaffByPassId.mockResolvedValue(null);
     mockRedeemRepo.getRedeemByTeamName.mockResolvedValue(null);
   
