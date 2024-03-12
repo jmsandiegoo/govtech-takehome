@@ -36,7 +36,7 @@ DATABASE_URL=postgres://postgres:govtechrocks@localhost:5433/postgres
 4. Generate Schema Types: `npx kysely-codegen`
 5. Build the project: `npm run build`
 6. Run the project: `npx govtech-takehome`
-7. Test the project: `npm run test`
+7. Test the project: `npm run test` *Note: repositories unit test is not isolated due to limited testing documentation of Kysely for mocking / stubbing the module. Alternatively, testcontainer that has an isolated postgre db can be used to unit test the respositories. But it was not implemented here unfortunately.
 
 ## Commands
 `lookup-staff <staffPassId>`: Look up the database for staff with the particular staff pass ID.
