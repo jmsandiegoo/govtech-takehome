@@ -11,7 +11,7 @@ import { TeamService } from './services/TeamService';
 import { TeamRepository } from './repositories/TeamRepository';
 import { RedeemService } from './services/RedeemService';
 
-// instantiate di dependencies
+// instantiate dependency pattern dependencies
 const database: Database = new Database();
 const staffRepository: StaffRepository = new StaffRepository(database);
 const redeemRepository: RedeemRepository = new RedeemRepository(database);
@@ -22,7 +22,7 @@ const teamService: TeamService = new TeamService(teamRepository, redeemRepositor
 const parser: Parser = new Parser(staffService, teamService, redeemService);
 const ui: UI = new UI();
 
-// execute the mainApp and inject dep
+// execute the mainApp and inject dependecy (dependency injection pattern)
 const mainApp = new MainApp(ui, parser);
 mainApp.start();
 mainApp.runUntilExit();
