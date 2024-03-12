@@ -7,7 +7,7 @@ export interface ICommand {
      * If there is an unexpected error during execution,
      * CommandExecutionError is thrown.
      *
-     * @return {CommandResDTO}
+     * @return {Promise<CommandResDTO>}
      * @throws {CommandExecutionError} If an unexpected error occured.
      */
     execute(): Promise<CommandResDTO>;
