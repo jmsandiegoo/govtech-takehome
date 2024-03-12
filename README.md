@@ -37,6 +37,7 @@ DATABASE_URL=postgres://postgres:govtechrocks@localhost:5433/postgres
 4. Generate Schema Types: `npx kysely-codegen`
 5. Build the project: `npm run build`
 6. Run the project: `npx govtech-takehome`
+7. Test the project: `npm run test`
 
 ## Commands
 `lookup-staff <staffPassId>`: Look up the database for staff with the particular staff pass ID.
