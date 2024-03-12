@@ -17,7 +17,7 @@ Port: 5433
 Username: postgres
 Password: govtechrocks
 ```
-3. Execute Schema: After connecting to the PostgreSQL database, execute the schema provided in `src/database/schema.sql`. This schema defines the structure of the database tables required for GiftTrackerPro. *Assumption: the csv file records such as teams and staffs are already inserted in the database hence the need to run the schema with sample data.
+3. Execute Schema: After connecting to the PostgreSQL database, execute the schema provided in `src/database/schema.sql`. This schema defines the structure of the database tables required for GiftTrackerPro. *Assumption: the csv file records such as teams and staffs are assumed to be already inserted in the database hence the need to run the schema with sample data.
 
 Nice! Your database is now set up and ready to be used with GiftTrackerPro.
 
