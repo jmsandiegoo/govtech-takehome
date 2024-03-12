@@ -5,7 +5,7 @@ import { ICommand } from "./ICommand";
 import { gen_fail_cmd_message, gen_success_cmd_messsage } from "../utils/helper";
 import { CommandExecutionError } from "../errors/CommandExecutionError";
 
-export class VerifyTeamRedemptiomCommand implements ICommand {
+export class VerifyTeamRedemptionCommand implements ICommand {
     public static readonly COMMAND_WORD = "verify-team-redemption";
 
     private teamName: string;
@@ -22,11 +22,11 @@ export class VerifyTeamRedemptiomCommand implements ICommand {
     public async execute(): Promise<CommandResDTO> {
         try {
             const res = await this.teamService.verifyTeamRedemption(this.teamName);
-            return {resultMessage: gen_success_cmd_messsage(VerifyTeamRedemptiomCommand.COMMAND_WORD,
+            return {resultMessage: gen_success_cmd_messsage(VerifyTeamRedemptionCommand.COMMAND_WORD,
                 `${res.teamName} has ${res.isEligibleToRedeem ? 'not' : 'already'} redeemed`)};
         } catch (error) {
             if (error instanceof ServiceError) {
-                throw new CommandExecutionError(gen_fail_cmd_message(VerifyTeamRedemptiomCommand.COMMAND_WORD, error.message));
+                throw new CommandExecutionError(gen_fail_cmd_message(VerifyTeamRedemptionCommand.COMMAND_WORD, error.message));
             } else {
                 throw error;
             }

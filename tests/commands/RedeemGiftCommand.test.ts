@@ -15,7 +15,6 @@ describe("RedeemGiftCommand", () => {
   redeemService = new RedeemService(mockTeamRepo, mockRedeemRepo) as jest.Mocked<RedeemService>;
   let redeemGiftCommand: RedeemGiftCommand = new RedeemGiftCommand(teamName, redeemService);
 
-
   it("execute returns correct result when redemption is successful", async () => {
     
     const mockRes = {

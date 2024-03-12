@@ -4,7 +4,7 @@ import { LookupStaffCommand } from "../commands/LookupStaffCommand";
 import { IStaffService } from "../services/IStaffService";
 import { ITeamService } from "../services/ITeamService";
 import { InvalidCommandError } from "../errors/InvalidCommandError";
-import { VerifyTeamRedemptiomCommand } from "../commands/VerifyTeamRedemptiomCommand";
+import { VerifyTeamRedemptionCommand } from "../commands/VerifyTeamRedemptionCommand";
 import { IRedeemService } from "../services/IRedeemService";
 import { RedeemGiftCommand } from "../commands/RedeemGiftCommand";
 
@@ -41,7 +41,7 @@ export class Parser implements IParser {
             case LookupStaffCommand.COMMAND_WORD:
                 command = this.parseLookupStaffCommand(args);
                 break;
-            case VerifyTeamRedemptiomCommand.COMMAND_WORD:
+            case VerifyTeamRedemptionCommand.COMMAND_WORD:
                 command = this.parseVerifyTeamRedemptionCommand(args);
                 break;
             case RedeemGiftCommand.COMMAND_WORD:
@@ -85,7 +85,7 @@ export class Parser implements IParser {
             throw new InvalidCommandError("<teamName> is required.");
         }
 
-        return new VerifyTeamRedemptiomCommand(teamName, this.teamService);
+        return new VerifyTeamRedemptionCommand(teamName, this.teamService);
     }
 
     private parseRedeemGiftCommand(args: string): ICommand{
