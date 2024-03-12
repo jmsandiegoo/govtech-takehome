@@ -1,7 +1,7 @@
 import { Database } from "../../src/database/Database";
 import { TeamRepository } from "../../src/repositories/TeamRepository";
 
-describe("Staff Repository", () => {
+describe("Team Repository", () => {
     let teamRepo: TeamRepository;
     let dbService: Database;
 

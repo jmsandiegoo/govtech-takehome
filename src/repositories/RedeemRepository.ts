@@ -34,7 +34,7 @@ export class RedeemRepository implements IRedeemRepository {
                 team_name: teamName.toUpperCase(),
                 redeemed_at: redeemedAt ?? new Date(),
             })
-            .returning(['redeem_id', 'team_name', 'redeemed_at'])
+            .returning(["redeem_id", "team_name", "redeemed_at"])
             .executeTakeFirst();
 
         return nredeem 
