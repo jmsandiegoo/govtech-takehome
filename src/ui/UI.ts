@@ -6,13 +6,13 @@ export class UI implements IUI {
     private reader: readline.Interface;
     private outputStream: NodeJS.WriteStream;
 
-    private static LOGO = "░██████╗░██╗███████╗████████╗████████╗██████╗░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░██████╗░██████╗░░█████╗░\n"
+    private static readonly LOGO = "░██████╗░██╗███████╗████████╗████████╗██████╗░░█████╗░░█████╗░██╗░░██╗███████╗██████╗░██████╗░██████╗░░█████╗░\n"
     + "██╔════╝░██║██╔════╝╚══██╔══╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗\n"
     + "██║░░██╗░██║█████╗░░░░░██║░░░░░░██║░░░██████╔╝███████║██║░░╚═╝█████═╝░█████╗░░██████╔╝██████╔╝██████╔╝██║░░██║\n"
     + "██║░░╚██╗██║██╔══╝░░░░░██║░░░░░░██║░░░██╔══██╗██╔══██║██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗██╔═══╝░██╔══██╗██║░░██║\n"
     + "╚██████╔╝██║██║░░░░░░░░██║░░░░░░██║░░░██║░░██║██║░░██║╚█████╔╝██║░╚██╗███████╗██║░░██║██║░░░░░██║░░██║╚█████╔╝\n"
     + "░╚═════╝░╚═╝╚═╝░░░░░░░░╚═╝░░░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝░╚════╝░";
-    private static WELCOME_MESSAGE: string = "Welcome to GiftTrackerPro, your ultimate solution for managing holiday gift redemptions within your organization!";
+    private static readonly WELCOME_MESSAGE: string = "Welcome to GiftTrackerPro, your ultimate solution for managing holiday gift redemptions within your organization!";
     private static readonly DIVIDER: string = "____________________________________________________________\n";
     private static readonly LINE_SEPARATOR: string = os.EOL;
 
